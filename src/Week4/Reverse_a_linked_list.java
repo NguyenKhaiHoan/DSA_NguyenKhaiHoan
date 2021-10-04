@@ -1,49 +1,11 @@
 package Week4;
 
-import java.io.*;
 
-
-class SinglyLinkedListNode {
-    public int data;
-    public SinglyLinkedListNode next;
-
-    public SinglyLinkedListNode(int nodeData) {
-        this.data = nodeData;
-        this.next = null;
-    }
-}
-
-class SinglyLinkedList {
-    public SinglyLinkedListNode head;
-    public SinglyLinkedListNode tail;
-
-    public SinglyLinkedList() {
-        this.head = null;
-        this.tail = null;
-    }
-
-    public void insertNode(int nodeData) {
-        SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
-
-        if (this.head == null) {
-            this.head = node;
-        } else {
-            this.tail.next = node;
-        }
-
-        this.tail = node;
-    }
-}
-
-
-class Result {
-
+public class Reverse_a_linked_list {
     public static SinglyLinkedListNode reverse(SinglyLinkedListNode llist) {
-        // Write your code here
         SinglyLinkedListNode curNode = llist;
 
-        while (curNode != null && curNode.next != null)
-        {
+        while (curNode != null && curNode.next != null) {
             SinglyLinkedListNode nextNode = curNode.next;
             curNode.next = nextNode.next;
             nextNode.next = llist;
@@ -52,10 +14,19 @@ class Result {
 
         return llist;
     }
-}
 
-public class Reverse_a_linked_list {
     public static void main(String[] args) {
+        SinglyLinkedListNode n1 = new SinglyLinkedListNode(1);
+        SinglyLinkedListNode n2 = new SinglyLinkedListNode(2);
+        SinglyLinkedListNode n3 = new SinglyLinkedListNode(3);
+        n1.next = n2; n2.next = n3;
 
+        SinglyLinkedListNode m1 = new SinglyLinkedListNode(1);
+        SinglyLinkedListNode m2 = new SinglyLinkedListNode(2);
+        SinglyLinkedListNode m3 = new SinglyLinkedListNode(4);
+        m1.next = m2; m2.next = m3;
+
+        SinglyLinkedListNode newList = reverse(n1);
+        SinglyLinkedListNode.printLinkedList(newList);
     }
 }

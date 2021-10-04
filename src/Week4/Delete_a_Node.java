@@ -1,40 +1,6 @@
 package Week4;
 
-import java.io.*;
-
-class SinglyLinkedListNode {
-    public int data;
-    public SinglyLinkedListNode next;
-
-    public SinglyLinkedListNode(int nodeData) {
-        this.data = nodeData;
-        this.next = null;
-    }
-}
-
-class SinglyLinkedList {
-    public SinglyLinkedListNode head;
-    public SinglyLinkedListNode tail;
-
-    public SinglyLinkedList() {
-        this.head = null;
-        this.tail = null;
-    }
-
-    public void insertNode(int nodeData) {
-        SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
-
-        if (this.head == null) {
-            this.head = node;
-        } else {
-            this.tail.next = node;
-        }
-
-        this.tail = node;
-    }
-}
-
-class Result {
+public class Delete_a_Node {
 
     public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode llist, int position) {
         if(position == 0) {
@@ -43,22 +9,24 @@ class Result {
             }
             return llist;
         }
+
         SinglyLinkedListNode currNode = llist;
         SinglyLinkedListNode prevNode = null;
         int count = 0;
         boolean bIsFound = false;
+
         while(currNode != null) {
             if(count == position) {
-                bIsFound = true;  // remove currNode
+                bIsFound = true;  // Xóa currNode
                 break;
             }
             prevNode = currNode;
             currNode = currNode.next;
             count++;
         }
-        // remove curr
+        // xóa curr
         if(bIsFound) {
-            if(prevNode == null) { // Current Node is Last Node
+            if(prevNode == null) { // Current Node là Last Node
                 return null;
             } else {
                 if(currNode != null){
@@ -69,10 +37,13 @@ class Result {
         return llist;
     }
 
-}
+    public static void main(String[] args) {
+        SinglyLinkedListNode n1 = new SinglyLinkedListNode(1);
+        SinglyLinkedListNode n2 = new SinglyLinkedListNode(2);
+        SinglyLinkedListNode n3 = new SinglyLinkedListNode(3);
+        n1.next = n2; n2.next = n3;
 
-public class Delete_a_Node {
-    public static void main(String[] args) throws IOException {
-
+        SinglyLinkedListNode newList = deleteNode(n1, 1);
+        SinglyLinkedListNode.printLinkedList(newList);
     }
 }

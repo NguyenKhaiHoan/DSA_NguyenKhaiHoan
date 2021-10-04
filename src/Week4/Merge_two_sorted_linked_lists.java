@@ -1,23 +1,6 @@
 package Week4;
 
 public class Merge_two_sorted_linked_lists {
-    public static class SinglyLinkedListNode {
-        int data;
-        SinglyLinkedListNode next;
-
-        public SinglyLinkedListNode(int nodeData) {
-            this.data = nodeData;
-            this.next = null;
-        }
-    }
-
-    public static void printLinkedList(SinglyLinkedListNode head) {
-        while (head != null) {
-            System.out.printf("%d ", head.data);
-            head = head.next;
-        }
-        System.out.println();
-    }
 
     public static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
         SinglyLinkedListNode newNode = new SinglyLinkedListNode(0);
@@ -43,6 +26,7 @@ public class Merge_two_sorted_linked_lists {
             }
             temp = temp.next;
         }
+
         return newNode.next;
     }
 
@@ -51,12 +35,13 @@ public class Merge_two_sorted_linked_lists {
         SinglyLinkedListNode n2 = new SinglyLinkedListNode(2);
         SinglyLinkedListNode n3 = new SinglyLinkedListNode(3);
         n1.next = n2; n2.next = n3;
+
         SinglyLinkedListNode m1 = new SinglyLinkedListNode(1);
         SinglyLinkedListNode m2 = new SinglyLinkedListNode(2);
         SinglyLinkedListNode m3 = new SinglyLinkedListNode(4);
         m1.next = m2; m2.next = m3;
 
         SinglyLinkedListNode newList = mergeLists(n1, m1);
-        printLinkedList(newList);
+        SinglyLinkedListNode.printLinkedList(newList);
     }
 }

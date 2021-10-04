@@ -1,40 +1,6 @@
 package Week4;
 
-import java.io.*;
-import java.util.*;
-
-
 public class Insert_a_Node_at_the_Tail_of_a_Linked_List {
-    static class SinglyLinkedListNode {
-        public int data;
-        public SinglyLinkedListNode next;
-
-        public SinglyLinkedListNode(int nodeData) {
-            this.data = nodeData;
-            this.next = null;
-        }
-    }
-
-    static class SinglyLinkedList {
-        public SinglyLinkedListNode head;
-
-        public SinglyLinkedList() {
-            this.head = null;
-        }
-    }
-
-    public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep, BufferedWriter bufferedWriter) throws IOException {
-        while (node != null) {
-            bufferedWriter.write(String.valueOf(node.data));
-
-            node = node.next;
-
-            if (node != null) {
-                bufferedWriter.write(sep);
-            }
-        }
-    }
-
     static SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
         SinglyLinkedListNode temp = head;
         SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
@@ -53,8 +19,13 @@ public class Insert_a_Node_at_the_Tail_of_a_Linked_List {
         return head;
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        SinglyLinkedListNode n1 = new SinglyLinkedListNode(1);
+        SinglyLinkedListNode n2 = new SinglyLinkedListNode(2);
+        SinglyLinkedListNode n3 = new SinglyLinkedListNode(3);
+        n1.next = n2; n2.next = n3;
 
-    public static void main(String[] args) throws IOException {
+        SinglyLinkedListNode newList = insertNodeAtTail(n1, 4);
+        SinglyLinkedListNode.printLinkedList(newList);
     }
 }

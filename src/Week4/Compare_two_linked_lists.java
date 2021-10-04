@@ -2,40 +2,7 @@ package Week4;
 
 public class Compare_two_linked_lists {
 
-    static class SinglyLinkedListNode {
-        public int data;
-        public SinglyLinkedListNode next;
-
-        public SinglyLinkedListNode(int nodeData) {
-            this.data = nodeData;
-            this.next = null;
-        }
-    }
-
-    static class SinglyLinkedList {
-        public SinglyLinkedListNode head;
-        public SinglyLinkedListNode tail;
-
-        public SinglyLinkedList() {
-            this.head = null;
-            this.tail = null;
-        }
-
-        public void insertNode(int nodeData) {
-            SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
-
-            if (this.head == null) {
-                this.head = node;
-            } else {
-                this.tail.next = node;
-            }
-
-            this.tail = node;
-        }
-    }
-
-
-    static boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+    public static boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
         if(head1 == null && head2 == null) {
             return true;
         }
@@ -52,5 +19,19 @@ public class Compare_two_linked_lists {
             secondList = secondList.next;
         }
         return false;
+    }
+
+    public static void main(String[] args) {
+        SinglyLinkedListNode n1 = new SinglyLinkedListNode(1);
+        SinglyLinkedListNode n2 = new SinglyLinkedListNode(2);
+        SinglyLinkedListNode n3 = new SinglyLinkedListNode(3);
+        n1.next = n2; n2.next = n3;
+
+        SinglyLinkedListNode m1 = new SinglyLinkedListNode(1);
+        SinglyLinkedListNode m2 = new SinglyLinkedListNode(2);
+        SinglyLinkedListNode m3 = new SinglyLinkedListNode(4);
+        m1.next = m2; m2.next = m3;
+
+        System.out.println(compareLists(n1, m1));
     }
 }
