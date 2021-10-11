@@ -1,0 +1,11 @@
+Nhận xét: 
+
+Thời gian của số lần chạy của vòng lặp chính trên toàn bộ mảng: O(n)
+Thời gian của số lần chạy trên mảng con để tìm vị trí giá trị nhỏ nhất (minIndex): O(n^2)
+Thời gian của số lần chạy để đảo vị trí O(n^2) 
+=> Thời gian chạy của thuật toán Selection Sort: O(n^2)
+
+Thời gian thuật toán chạy gần như bằng nhau đối với dữ liệu được (gần) sắp xếp cũng như dữ liệu chưa được sắp xếp
+=> Không nhận biết được mảng đã được sắp xếp.
+	+) Trường hợp tốt nhất là n(n-1)/2
+	+) Trường hợp xấu nhất là 3n(n-1)/2
