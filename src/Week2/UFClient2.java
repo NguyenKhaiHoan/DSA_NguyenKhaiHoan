@@ -1,4 +1,4 @@
-// javac -cp D:\coursera\algs4.jar;. UFClient2.java
+package Week2;// javac -cp D:\coursera\algs4.jar;. UFClient2.java
 // java -cp D:\coursera\algs4.jar;. UFClient2 < D:\coursera\data\tinyUF.txt
 import edu.princeton.cs.algs4.*;
 public class UFClient2 {

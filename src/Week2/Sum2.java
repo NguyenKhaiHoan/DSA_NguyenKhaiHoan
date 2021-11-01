@@ -1,3 +1,5 @@
+package Week2;
+
 import edu.princeton.cs.algs4.*;
 
 public class Sum2 {

@@ -4,9 +4,7 @@ import edu.princeton.cs.algs4.*;
 
 public class MergeSort {
 
-    // Merge hai mảng con của arr[].
-    // Mảng con thứ nhất là arr[l..m]
-    // Mảng con thứ hai là arr[m+1..r]
+    // Merge hai mảng con của arr[] với mảng con 1 là arr[l..m], mảng con 2 là arr[m+1..r]
     private static void merge(int arr[], int l, int m, int r) {
 
         // Tìm kích thước của 2 mảng con để merged
