@@ -22,7 +22,7 @@ public class Bai2_2 {
             int v = q.poll();
             for (int w : graph.get(v)) {
                 if (!marked[w]) {
-                    q.add(v);
+                    q.add(w);
                     costs[w] = costs[v] + UNIT_COST;
                     marked[w] = true;
                 }
